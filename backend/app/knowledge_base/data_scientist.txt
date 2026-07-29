@@ -1,0 +1,26 @@
+TOPIC: Exploratory Data Analysis
+Exploratory data analysis is the process of summarizing and visualizing a dataset before formal modeling, in order to understand its structure, spot anomalies, and form hypotheses. This typically includes examining summary statistics such as mean, median, and standard deviation, plotting distributions of individual variables, checking for missing or duplicate values, and visualizing relationships between variables through scatter plots or correlation matrices. Good exploratory analysis often reveals data quality issues or unexpected patterns that shape the rest of the modeling approach.
+
+TOPIC: Statistical Inference and Hypothesis Testing
+Hypothesis testing provides a formal framework for deciding whether an observed effect in sample data is likely to reflect a real effect in the broader population or could plausibly be explained by random chance. A null hypothesis represents the default assumption of no effect, and a p-value expresses the probability of observing data at least as extreme as what was seen, assuming the null hypothesis is true. A small p-value below a chosen significance threshold suggests rejecting the null hypothesis, though a statistically significant result is not automatically practically meaningful, and multiple comparisons without correction can inflate the chance of false positives.
+
+TOPIC: A/B Testing
+A/B testing compares two versions of a product or feature by randomly assigning users to each group and measuring the effect on a chosen metric. Randomization is what allows a causal claim to be made, since it balances both known and unknown confounding factors between groups on average. Choosing an appropriate sample size ahead of time, based on the expected effect size and desired statistical power, helps avoid stopping an experiment too early or drawing conclusions from noise.
+
+TOPIC: Regression and Classification Algorithms
+Linear regression models a continuous target as a weighted sum of input features and is prized for its interpretability, since each coefficient directly indicates the effect of a feature. Logistic regression extends this idea to classification by passing the weighted sum through a sigmoid function to produce a probability. Decision trees split the feature space into regions based on threshold rules and are easy to interpret, while ensemble methods such as random forests and gradient boosting combine many trees to substantially improve predictive accuracy at some cost to interpretability.
+
+TOPIC: Time Series Analysis
+Time series data has an inherent temporal ordering, which classic modeling approaches must respect, typically by decomposing a series into trend, seasonal, and residual components. Autocorrelation measures how a series relates to its own past values, informing choices such as the order of an autoregressive model. When evaluating a time series model, data must be split respecting chronological order rather than randomly, since randomly shuffled splits would let a model implicitly see the future during training.
+
+TOPIC: Data Pipelines and ETL
+Extract, transform, and load pipelines move data from source systems, apply cleaning and transformation logic, and load the result into a destination suited for analysis, such as a data warehouse. Reliable pipelines are typically idempotent, meaning running them again with the same input produces the same result rather than duplicating data, and include validation steps that catch schema changes or unexpected null rates before they silently corrupt downstream analysis.
+
+TOPIC: Dimensionality Reduction
+High-dimensional data can be difficult to visualize and can suffer from the curse of dimensionality, where distances between points become less meaningful as dimensions increase. Principal component analysis finds new axes, called principal components, that capture the directions of greatest variance in the data, allowing a dataset to be projected onto a smaller number of dimensions while retaining as much information as possible. Techniques such as t-SNE and UMAP are often used specifically for visualizing high-dimensional data in two or three dimensions, though the distances in their output are not always meaningful outside of visualization.
+
+TOPIC: Model Interpretability
+As models become more complex, understanding why a model made a particular prediction becomes harder but often remains important, particularly in regulated domains. Feature importance scores summarize how much each feature contributes to a model's predictions overall, while methods such as SHAP values explain individual predictions by attributing the outcome to each input feature in a way grounded in cooperative game theory. Interpretability is often traded off against raw predictive performance, and the right balance depends on the stakes of the decision being made.
+
+TOPIC: Communicating Results to Stakeholders
+Technical findings are only useful if they can influence a decision, which means results need to be translated into language and visuals appropriate for a non-technical audience. This means leading with the business implication rather than the statistical detail, using clear visualizations rather than tables of raw numbers, and being explicit about uncertainty and limitations rather than overstating confidence in a result.
